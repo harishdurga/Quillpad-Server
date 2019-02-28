@@ -296,6 +296,8 @@ class QuillCherry:
 
     def loadPreprocs(self,preprocsListFile) :
         self.preprocs = {}
+        # Alok : preprocessed files not available hence returning from here.
+        return
         lines = open(preprocsListFile).readlines()
         for line in lines[1:] :
             (lang,file) = line.split()

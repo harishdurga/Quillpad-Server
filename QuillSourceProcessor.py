@@ -93,17 +93,32 @@ class QuillSourceProcessor(object):
                 'malayalam': xlit.QuillEngXliterator('EnglishPronouncingTrees','IndianPronouncingTrees','Malayalam_Xlit.xml')
         }
 
+        # Alok : clash lists not available
         self.clashMaps = {
-                'bengali': self.makeClashMap('bengaliClashList.txt'),
-                'gujarati': self.makeClashMap('gujaratiClash.txt'),
-                'hindi': self.makeClashMap('hindiClash.txt'),
-                'kannada': self.makeClashMap('kannadaClash.txt'),
-                'tamil': self.makeClashMap('tamilClash.txt'),
-                'marathi': self.makeClashMap('marathiClash.txt'),
-                'nepali': self.makeClashMap('nepaliClash.txt'),
-                'punjabi': self.makeClashMap('punjabiClash.txt'),
-                'telugu': self.makeClashMap('teluguClash.txt'),
-                'malayalam': self.makeClashMap('malayalamClash.txt')
+        #        'bengali': self.makeClashMap('bengaliClashList.txt'),
+        #        'gujarati': self.makeClashMap('gujaratiClash.txt'),
+        #        'hindi': self.makeClashMap('hindiClash.txt'),
+        #        'kannada': self.makeClashMap('kannadaClash.txt'),
+        #        'tamil': self.makeClashMap('tamilClash.txt'),
+        #        'marathi': self.makeClashMap('marathiClash.txt'),
+        #        'nepali': self.makeClashMap('nepaliClash.txt'),
+        #        'punjabi': self.makeClashMap('punjabiClash.txt'),
+        #        'telugu': self.makeClashMap('teluguClash.txt'),
+        #        'malayalam': self.makeClashMap('malayalamClash.txt')
+        }
+
+
+        self.clashMaps = {
+                'bengali': {},
+                'gujarati': {},
+                'hindi': {},
+                'kannada': {},
+                'tamil': {},
+                'marathi': {},
+                'nepali': {},
+                'punjabi': {},
+                'telugu': {},
+                'malayalam': {}
         }
 
         self.modeTypes = ['predictive','xliterate','itrans']
@@ -125,6 +140,9 @@ class QuillSourceProcessor(object):
         self.loadEnglishDict('dict.txt')
 
     def loadEnglishDict(self, fname):
+        # Alok
+        self.engWords = {}
+        return
         words = open(fname).read().split()
         self.engWords = dict([(w, None) for w in words])
         

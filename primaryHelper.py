@@ -219,9 +219,10 @@ def init():
 
     # Load the hindi dictionary
     d = loadedUniqueWords['hindi']
-    print "Loading hindi dictionary...",
-    for line in open('HindiDictionary.txt').readlines():
-        d[line.strip().decode('utf-8')] = 1
+    # Alok: Hindi dictionary not available
+    # print "Loading hindi dictionary...",
+    # for line in open('HindiDictionary.txt').readlines():
+    #     d[line.strip().decode('utf-8')] = 1
     print "Done (%d words)" % (len(d.keys()),)
 
 init()
